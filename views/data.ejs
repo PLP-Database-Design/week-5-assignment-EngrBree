@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Patients List</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% results.forEach(patient => { %>
+                <tr>
+                    <td><%= patient.patient_id %></td>
+                    <td><%= patient.first_name %></td>
+                    <td><%= patient.last_name %></td>
+                    <td><%= patient.date_of_birth %></td>
+                </tr>
+            <% }) %>
+            
+        </tbody>
+    </table>
+     <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Specialty</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% results.forEach(provider => { %>
+                <tr>
+                    <td><%= provider.first_name %></td>
+                    <td><%= provider.last_name %></td>
+                    <td><%= provider.provider_specialty %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
